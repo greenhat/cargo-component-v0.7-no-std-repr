@@ -1,6 +1,6 @@
-Minimal case for reproducing cargo-component v0.7 (rust 1.75) breakage of `#![no_std]` in components.
+### Minimal case for reproducing cargo-component v0.7 (rust 1.75) breakage of `#![no_std]` in components.
 
-After generating the project with `cargo component new --lib test-lib` when adding `#![no_std]` to `lib.rs`, the `cargo-component` build fails with:
+1. After generating the project with `cargo component new --lib test-lib` when adding `#![no_std]` to `lib.rs`, the `cargo-component` build fails with:
 
 ```text
 ❯ cargo component build --release
@@ -12,7 +12,7 @@ error: `#[panic_handler]` function required, but not found
 error: could not compile `test-lib` (lib) due to 2 previous errors
 ```
 
-When adding a global allocator and panic handler, the build fails with:
+2. When adding a global allocator and panic handler, the build fails with:
 
 ```text
 ❯ cargo component build --release
